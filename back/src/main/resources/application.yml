@@ -22,8 +22,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/mything?createDatabaseIfNotExist=true
     username: root
     password: root
-    #    username: ssafy
-    #    password: ssafy
 
   # JPA ??
   jpa:
