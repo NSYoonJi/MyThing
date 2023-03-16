@@ -1,0 +1,7 @@
+- basenotes_all_perfume_list.csv : 크롤링할 basenotes의 향수 링크
+- basenotes_perfumes.csv : 크롤링해온 basenotes의 향수 정보
+- basenotes_reviews.csv : 크롤링해온 향수의 리뷰 정보
+- fragrantica_all_perfume_list..csv : 크롤링할 fragrantica의 향수 링크
+- fragrantica_notes.csv : 번호로된 fragrantica의 notes 정보 매칭용 데이터
+- fragrantica_review_class.csv : fragrantica의 리뷰 이모티콘 매칭용 데이터
+- fragrantica_reviews.csv : 크롤링해온 향수의 리뷰 정보
