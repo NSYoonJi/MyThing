@@ -5,8 +5,9 @@ server:
 spring:
   #redis ??
   redis:
-    host: 127.0.0.1
-    port: 6379
+    host: j8b207.p.ssafy.io
+    port: 3301
+    password: ns
 
   application:
     name: mything
@@ -19,9 +20,9 @@ spring:
   # ??? ?? ??
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/mything?createDatabaseIfNotExist=true
-    username: root
-    password: root
+    url: jdbc:mysql://j8b207.p.ssafy.io:3300/mything?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true
+    username: ns
+    password: ns
 
   # JPA ??
   jpa:
@@ -29,7 +30,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 #    show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       format_sql: true
 
 logging.level:
