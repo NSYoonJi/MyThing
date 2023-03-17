@@ -1,5 +1,6 @@
 package com.project.mything.review.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -22,4 +23,9 @@ public class ReviewImage {
     @NotNull
     @Column(name = "like_cnt")
     private Long likeCnt;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "review_id")
+    @JsonIgnore
+    private Review review;
 }

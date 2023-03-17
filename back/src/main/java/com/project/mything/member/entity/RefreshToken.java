@@ -1,5 +1,7 @@
 package com.project.mything.member.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,5 +14,10 @@ public class RefreshToken {
     private Long id;
 
     private String refreshToken;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "kakao_id")
+    @JsonIgnore
+    private Member member;
 
 }

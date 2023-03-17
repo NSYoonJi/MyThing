@@ -1,5 +1,6 @@
 package com.project.mything.perfume.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -33,5 +34,10 @@ public class PerfumeDetail {
     private Long fall;
     @NotNull
     private Long winter;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "perfume_id")
+    @JsonIgnore
+    private Perfume perfume;
 
 }

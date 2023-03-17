@@ -22,5 +22,5 @@ public class Category {
     private String image;
 
     @OneToMany(mappedBy = "category")
-    private List<Note> notes = new ArrayList<>();
+    private List<Note> noteList = new ArrayList<>();
 }

@@ -1,8 +1,8 @@
 package com.project.mything.review.entity;
 
-import com.project.mything.perfume.entity.Longevity;
-import com.project.mything.perfume.entity.Preference;
-import com.project.mything.perfume.entity.Sillage;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.project.mything.member.entity.Member;
+import com.project.mything.perfume.entity.*;
 import com.sun.istack.NotNull;
 import lombok.*;
 
@@ -29,5 +29,34 @@ public class Review {
 
     @Enumerated(EnumType.STRING)
     private Sillage sillage;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name = "kakao_id")
+    private Member member;
+
+    @OneToOne(mappedBy = "review", fetch = FetchType.LAZY)
+    private ReviewImage reviewImage;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name = "perfume_id")
+    private Perfume perfume;
+
+    public void addMember(Member member) {
+        if(this.member!=null){
+            this.member.getReviewList().remove(this);
+        }
+        this.member = member;
+        member.getReviewList().add(this);
+    }
+
+    public void addPerfume(Perfume perfume) {
+        if(this.perfume!=null){
+            this.perfume.getReviewList().remove(this);
+        }
+        this.perfume = perfume;
+        perfume.getReviewList().add(this);
+    }
 
 }

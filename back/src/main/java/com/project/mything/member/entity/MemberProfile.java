@@ -1,5 +1,7 @@
 package com.project.mything.member.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -20,4 +22,10 @@ public class MemberProfile {
     private String nickname;
 
     private String image;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JoinColumn(name = "kakao_id")
+    private Member member;
+
 }

@@ -1,5 +1,7 @@
 package com.project.mything.perfume.entity;
 
+import com.project.mything.review.entity.Review;
+import com.project.mything.survey.entity.SurveyResult;
 import com.sun.istack.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -7,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -27,5 +31,14 @@ public class Perfume {
     private String topNote;
     private String middleNote;
     private String baseNote;
+
+    @OneToMany(mappedBy = "perfume")
+    private List<SurveyResult> surveyResultList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "perfume")
+    private List<Review> reviewList = new ArrayList<>();
+
+    @OneToOne(mappedBy = "perfume", fetch = FetchType.LAZY)
+    private PerfumeDetail perfumeDetail;
 
 }

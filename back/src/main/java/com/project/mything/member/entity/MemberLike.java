@@ -1,5 +1,7 @@
 package com.project.mything.member.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -16,4 +18,9 @@ public class MemberLike {
     private String likeImage;
 
     private LocalDateTime time;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "kakao_id")
+    @JsonIgnore
+    private Member member;
 }
