@@ -1,7 +1,5 @@
 server:
   port: 8080
-  servlet:
-    context-path: /api
 spring:
   #redis ??
   redis:
@@ -20,6 +18,7 @@ spring:
   # ??? ?? ??
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://localhost:3306/mything-test?serverTimezone=Asia/Seoul
     url: jdbc:mysql://j8b207.p.ssafy.io:3300/mything?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true
     username: ns
     password: ns
@@ -32,7 +31,23 @@ spring:
     hibernate:
       ddl-auto: create
       format_sql: true
-
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client-id: 876653
+            client-secret: 9eec0e493dbf3db1f50e9930111e3715
+            redirect-uri: http://localhost:8080/login/oauth2/code/kakao
+            client-authentication-method: POST
+            authorization-grant-type: authorization_code
+            client-name: kakao
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-name-attribute: id
 logging.level:
   org.hibernate.SQL: debug
   org.hibernate.type: trace
