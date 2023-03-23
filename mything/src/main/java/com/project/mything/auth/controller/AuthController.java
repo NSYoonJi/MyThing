@@ -33,7 +33,10 @@ public class AuthController {
     }
 
      */
-
+    @GetMapping("/")
+    public String index(){
+        return "메인";
+    }
     @GetMapping(value = "/join")
     public ResponseEntity<?> join(@RequestHeader HttpHeaders headers, @RequestBody JoinRequestDto joinRequestDto){
 

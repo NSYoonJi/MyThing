@@ -19,8 +19,8 @@ import org.springframework.http.*;
 public class KakaoAuthService {
     // 추가정보 - user 로 옮길까 고민
     public void join(JoinRequestDto joinRequestDto) {
-        Member member = new Member();
-        MemberProfile memberProfile = new MemberProfile();
+        //Member member = new Member();
+        //MemberProfile memberProfile = new MemberProfile();
 
     }
 
