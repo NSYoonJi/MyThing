@@ -2,11 +2,11 @@ package com.project.mything.perfume.entity;
 
 import com.project.mything.review.entity.Review;
 import com.project.mything.survey.entity.SurveyResult;
-import com.sun.istack.NotNull;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,20 +16,25 @@ import java.util.List;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "perfume")
+@Builder
+@AllArgsConstructor
 public class Perfume {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "perfume_id")
     private Long id;
-    @NotNull
+
     private String name;
-    @NotNull
+
     private String brand;
-    @NotNull
-    @Column(columnDefinition = "TEXT")
+
+    @Lob
     private String info;
+
     private String topNote;
+
     private String middleNote;
+
     private String baseNote;
 
     @OneToMany(mappedBy = "perfume")

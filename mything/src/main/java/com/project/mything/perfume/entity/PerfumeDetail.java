@@ -17,27 +17,26 @@ public class PerfumeDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "perfume_detail_id")
     private Long id;
+
     @Column(name ="view_cnt")
-    @NotNull
     private Long viewCnt;
-    @NotNull
+
     private Long love;
-    @NotNull
+
     private Long ok;
-    @NotNull
+
     private Long hate;
-    @NotNull
+
     private Long spring;
-    @NotNull
+
     private Long summer;
-    @NotNull
+
     private Long fall;
-    @NotNull
+
     private Long winter;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "perfume_id")
     @JsonIgnore
     private Perfume perfume;
-
 }
