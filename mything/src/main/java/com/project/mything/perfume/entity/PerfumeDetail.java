@@ -1,7 +1,6 @@
 package com.project.mything.perfume.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.istack.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,4 +38,10 @@ public class PerfumeDetail {
     @JoinColumn(name = "perfume_id")
     @JsonIgnore
     private Perfume perfume;
+
+    //==조회수 증가==//
+    public Long updateViewCount(Long viewCnt) {
+        this.viewCnt = viewCnt + 1;
+        return this.viewCnt;
+    }
 }

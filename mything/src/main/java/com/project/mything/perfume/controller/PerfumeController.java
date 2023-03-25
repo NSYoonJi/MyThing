@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * packageName    : com.project.mything.perfume.controller fileName       : PerfumeController author
- *         : SSAFY date           : 2023-03-24 description    : ===========================================================
+ *         : hagnoykmik date           : 2023-03-24 description    : ===========================================================
  * DATE              AUTHOR             NOTE -----------------------------------------------------------
- * 2023-03-24        SSAFY       최초 생성
+ * 2023-03-24        hagnoykmik       최초 생성
  */
 @RestController
 @RequiredArgsConstructor

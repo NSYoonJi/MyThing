@@ -1,25 +1,20 @@
 package com.project.mything.perfume.dto;
 
 import com.project.mything.perfume.entity.Perfume;
-import com.project.mything.perfume.entity.PerfumeDetail;
-import java.util.Optional;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
  * packageName    : com.project.mything.perfume.dto fileName       : FindPerfumeResponse author
- *    : SSAFY date           : 2023-03-24 description    : ===========================================================
+ *    : hagnoykmik date           : 2023-03-24 description    : ===========================================================
  * DATE              AUTHOR             NOTE -----------------------------------------------------------
- * 2023-03-24        SSAFY       최초 생성
+ * 2023-03-24        hagnoykmik       최초 생성
  */
 @AllArgsConstructor
 @Data
-@Getter
-@Setter
 @Builder
 public class FindPerfumeResponse {
   // perfume
@@ -39,7 +34,7 @@ public class FindPerfumeResponse {
   private Long fall;
   private Long winter;
   
-  public static FindPerfumeResponse create(Perfume perfume) {
+  public static FindPerfumeResponse create(Perfume perfume, Long viewCnt) {
     FindPerfumeResponse foundPerfume = FindPerfumeResponse.builder()
         .name(perfume.getName())
         .brand(perfume.getBrand())
@@ -47,7 +42,6 @@ public class FindPerfumeResponse {
         .topNote(perfume.getTopNote())
         .middleNote(perfume.getMiddleNote())
         .baseNote(perfume.getBaseNote())
-        /////////////////////////////////
         .love(perfume.getPerfumeDetail().getLove())
         .ok(perfume.getPerfumeDetail().getOk())
         .hate(perfume.getPerfumeDetail().getHate())
@@ -55,8 +49,7 @@ public class FindPerfumeResponse {
         .summer(perfume.getPerfumeDetail().getSummer())
         .fall(perfume.getPerfumeDetail().getFall())
         .winter(perfume.getPerfumeDetail().getWinter())
-        // todo: 조회수고쳐야함
-        .viewCnt(perfume.getPerfumeDetail().getViewCnt() + 1)
+        .viewCnt(viewCnt)
         .build();
     return foundPerfume;
   }
