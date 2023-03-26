@@ -39,7 +39,10 @@ public class PerfumeDetail {
     @JsonIgnore
     private Perfume perfume;
 
-    //==조회수 증가==//
+    //==비즈니스 로직==//
+    /**
+     * 조회수 증가
+     */
     public Long updateViewCount(Long viewCnt) {
         this.viewCnt = viewCnt + 1;
         return this.viewCnt;

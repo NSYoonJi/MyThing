@@ -1,8 +1,8 @@
 package com.project.mything.perfume.service;
 
+import com.project.mything.perfume.dto.FindAllPopularPerfumeResponse;
 import com.project.mything.perfume.dto.FindPerfumeResponse;
-import com.project.mything.perfume.entity.Perfume;
-import java.util.Optional;
+import java.util.List;
 
 /**
  * packageName    : com.project.mything.perfume.service
@@ -16,5 +16,6 @@ import java.util.Optional;
  * 2023-03-24        hagnoykmik       최초 생성
  */
 public interface PerfumeService {
-  FindPerfumeResponse findById(Long perfumeId);
+  FindPerfumeResponse findPerfume(Long perfumeId);
+  List<FindAllPopularPerfumeResponse> findAllPopularPerfume();
 }

@@ -37,6 +37,10 @@ public class Perfume {
 
     private String baseNote;
 
+    @Lob
+    @Column(name = "image_url")
+    private String imgURL;
+
     @OneToMany(mappedBy = "perfume")
     private List<SurveyResult> surveyResultList = new ArrayList<>();
 
