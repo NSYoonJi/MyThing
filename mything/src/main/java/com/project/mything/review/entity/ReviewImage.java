@@ -24,8 +24,7 @@ public class ReviewImage {
     @Column(name = "like_cnt")
     private Long likeCnt;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "review_id")
+    @OneToOne(mappedBy = "reviewImage", fetch = FetchType.LAZY)
     @JsonIgnore
     private Review review;
 }

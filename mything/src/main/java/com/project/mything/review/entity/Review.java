@@ -35,7 +35,8 @@ public class Review {
     @JoinColumn(name = "kakao_id")
     private Member member;
 
-    @OneToOne(mappedBy = "review", fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "reviewImage_id")
     private ReviewImage reviewImage;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -43,6 +44,16 @@ public class Review {
     @JoinColumn(name = "perfume_id")
     private Perfume perfume;
 
+    //==생성 메서드==//
+    public static Review createReview(Member member, ReviewImage reviewImage, Perfume perfume) {
+        Review review = new Review();
+        review.addMember(member);
+        review.addPerfume(perfume);
+
+        return review;
+    }
+
+    //==연관관계 편의 메서드==//
     public void addMember(Member member) {
         if(this.member!=null){
             this.member.getReviewList().remove(this);
