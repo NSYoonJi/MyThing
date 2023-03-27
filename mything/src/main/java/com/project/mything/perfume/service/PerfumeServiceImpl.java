@@ -1,8 +1,8 @@
 package com.project.mything.perfume.service;
 
 import com.project.mything.perfume.dto.FindAllPopularPerfumeResponse;
-import com.project.mything.perfume.dto.FindAllReview;
-import com.project.mything.perfume.dto.FindAllReviewImage;
+import com.project.mything.perfume.dto.FindAllReviewByPerfumeId;
+import com.project.mything.perfume.dto.FindAllReviewImageByPerfumeId;
 import com.project.mything.perfume.dto.FindPerfumeResponse;
 import com.project.mything.perfume.entity.Perfume;
 import com.project.mything.perfume.entity.PerfumeDetail;
@@ -41,6 +41,7 @@ public class PerfumeServiceImpl implements PerfumeService {
     Optional<Perfume> perfume = perfumeRepository.findById(perfumeId);
     if (!perfume.isPresent()) throw new IllegalStateException("향수가 존재하지 않습니다.");
     Perfume findPerfume = perfume.get();
+//    findPerfume.getNotes()
 
     // 조회수 update
     Optional<PerfumeDetail> perfumeDetail = perfumeDetailRepository.findById(perfumeId);
@@ -50,13 +51,13 @@ public class PerfumeServiceImpl implements PerfumeService {
         .getViewCnt());
 
     // 향수의 리뷰 리스트를 Dto로 반환
-    List<FindAllReview> findReviewList = findPerfume.getReviewList().stream()
-        .map(r -> new FindAllReview(r.getSeason(), r.getPreference(), r.getLongevity(), r.getSillage(), r.getMember().getMemberProfile().getNickname()))
+    List<FindAllReviewByPerfumeId> findReviewList = findPerfume.getReviewList().stream()
+        .map(r -> new FindAllReviewByPerfumeId(r.getSeason(), r.getPreference(), r.getLongevity(), r.getSillage(), r.getMember().getMemberProfile().getNickname()))
         .collect(Collectors.toList());
 
     // todo: 향수의 리뷰리스트에서 리뷰 이미지가 있으면 Dto로 반환
-    List<FindAllReviewImage> findReviewImageList = findPerfume.getReviewList().stream()
-        .map(r -> new FindAllReviewImage(r.getReviewImage().getImage(),
+    List<FindAllReviewImageByPerfumeId> findReviewImageList = findPerfume.getReviewList().stream()
+        .map(r -> new FindAllReviewImageByPerfumeId(r.getReviewImage().getImage(),
             r.getReviewImage().getLikeCnt()))
         .collect(Collectors.toList());
 

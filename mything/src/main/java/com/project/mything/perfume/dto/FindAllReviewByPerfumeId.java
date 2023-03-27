@@ -4,7 +4,6 @@ import com.project.mything.perfume.entity.Longevity;
 import com.project.mything.perfume.entity.Preference;
 import com.project.mything.perfume.entity.Sillage;
 import com.project.mything.review.entity.Review;
-import com.sun.istack.NotNull;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import lombok.AllArgsConstructor;
@@ -21,7 +20,7 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 @Builder
-public class FindAllReview {
+public class FindAllReviewByPerfumeId {
   private String season;
 
   @Enumerated(EnumType.STRING)
@@ -35,15 +34,15 @@ public class FindAllReview {
 
   private String nickname;
 
-  public static FindAllReview create(Review review) {
-    FindAllReview findAllReview = FindAllReview.builder()
+  public static FindAllReviewByPerfumeId create(Review review) {
+    FindAllReviewByPerfumeId findAllReviewByPerfumeId = FindAllReviewByPerfumeId.builder()
         .season(review.getSeason())
         .preference(review.getPreference())
         .longevity(review.getLongevity())
         .sillage(review.getSillage())
         .nickname(review.getMember().getMemberProfile().getNickname())
         .build();
-    return findAllReview;
+    return findAllReviewByPerfumeId;
   }
 
 }

@@ -31,11 +31,7 @@ public class Perfume {
     @Lob
     private String info;
 
-    private String topNote;
-
-    private String middleNote;
-
-    private String baseNote;
+    private String notes;
 
     @Lob
     @Column(name = "image_url")

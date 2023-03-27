@@ -15,16 +15,16 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 @Builder
-public class FindAllReviewImage {
+public class FindAllReviewImageByPerfumeId {
   private String imgURL;
   private Long likeCnt;
 
-  public static FindAllReviewImage create(Review review) {
-    FindAllReviewImage findAllReviewImage = FindAllReviewImage.builder()
+  public static FindAllReviewImageByPerfumeId create(Review review) {
+    FindAllReviewImageByPerfumeId findAllReviewImageByPerfumeId = FindAllReviewImageByPerfumeId.builder()
         .imgURL(review.getReviewImage().getImage())
         .likeCnt(review.getReviewImage().getLikeCnt())
         .build();
-    return findAllReviewImage;
+    return findAllReviewImageByPerfumeId;
   }
 
 }

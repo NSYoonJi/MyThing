@@ -22,14 +22,18 @@ public class PerfumeController {
 
   private final PerfumeService perfumeService;
 
-  // 향수 정보 조회
+  /**
+   * 향수 정보 조회
+   */
   @GetMapping("/perfume/{perfumeId}")
   public ResponseEntity<FindPerfumeResponse> findPerfume(@PathVariable("perfumeId") Long perfumeId) {
     FindPerfumeResponse findPerfumeResponse = perfumeService.findPerfume(perfumeId);
     return ResponseEntity.ok().body(findPerfumeResponse);
   }
 
-  // 인기 향수 목록 조회
+  /**
+   * 인기 향수 목록 조회
+    */
   @GetMapping("recommend/popular")
   public ResponseEntity<List<FindAllPopularPerfumeResponse>> findPopularPerFume() {
     List<FindAllPopularPerfumeResponse> allPopularPerfume = perfumeService.findAllPopularPerfume();

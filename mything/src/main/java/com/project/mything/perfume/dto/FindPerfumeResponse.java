@@ -20,9 +20,11 @@ public class FindPerfumeResponse {
   private String name;
   private String brand;
   private String info;
-  private String topNote;
-  private String middleNote;
-  private String baseNote;
+  private String notes;
+  // todo: 수정필요
+//  private String topNote;
+//  private String middleNote;
+//  private String baseNote;
   private String perfumeImgURL;
   // perfume_detail
   private Long viewCnt;
@@ -35,18 +37,18 @@ public class FindPerfumeResponse {
   private Long winter;
   // review
   // todo:reviewId를 가져옴
-  private List<FindAllReview> reviewList;
+  private List<FindAllReviewByPerfumeId> reviewList;
   // todo:review_image
-  private List<FindAllReviewImage> reviewImageList;
+  private List<FindAllReviewImageByPerfumeId> reviewImageList;
   
-  public static FindPerfumeResponse create(Perfume perfume, Long viewCnt, List<FindAllReview> review, List<FindAllReviewImage> reviewImageList) {
+  public static FindPerfumeResponse create(Perfume perfume, Long viewCnt, List<FindAllReviewByPerfumeId> review, List<FindAllReviewImageByPerfumeId> reviewImageList) {
     FindPerfumeResponse foundPerfume = FindPerfumeResponse.builder()
         .name(perfume.getName())
         .brand(perfume.getBrand())
         .info(perfume.getInfo())
-        .topNote(perfume.getTopNote())
-        .middleNote(perfume.getMiddleNote())
-        .baseNote(perfume.getBaseNote())
+        .notes(perfume.getNotes())
+//        .middleNote(perfume.getMiddleNote())
+//        .baseNote(perfume.getBaseNote())
         .perfumeImgURL(perfume.getImgURL())
         //////
         .love(perfume.getPerfumeDetail().getLove())
