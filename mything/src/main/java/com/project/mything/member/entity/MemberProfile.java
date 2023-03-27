@@ -3,7 +3,9 @@ package com.project.mything.member.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import lombok.Getter;
 
+@Getter
 @Entity
 @Table(name = "member_profile")
 public class MemberProfile {

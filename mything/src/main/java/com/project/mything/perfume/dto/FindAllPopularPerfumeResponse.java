@@ -8,9 +8,9 @@ import lombok.Data;
 
 /**
  * packageName    : com.project.mything.perfume.dto fileName       : FindAllResponse author
- * : SSAFY date           : 2023-03-25 description    : ===========================================================
+ * : hagnoykmik date           : 2023-03-25 description    : ===========================================================
  * DATE              AUTHOR             NOTE -----------------------------------------------------------
- * 2023-03-25        SSAFY       최초 생성
+ * 2023-03-25        hagnoykmik       최초 생성
  */
 @AllArgsConstructor
 @Data
