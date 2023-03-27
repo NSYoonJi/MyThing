@@ -1,12 +1,17 @@
 package com.project.mything.member.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import lombok.Getter;
 
-@Getter
 @Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "member_profile")
 public class MemberProfile {
 
@@ -24,6 +29,10 @@ public class MemberProfile {
     private String nickname;
 
     private String image;
+    private String year;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JsonIgnore
