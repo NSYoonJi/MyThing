@@ -34,15 +34,15 @@ public class FindAllReviewByPerfumeId {
 
   private String nickname;
 
-  public static FindAllReviewByPerfumeId create(Review review) {
-    FindAllReviewByPerfumeId findAllReviewByPerfumeId = FindAllReviewByPerfumeId.builder()
-        .season(review.getSeason())
-        .preference(review.getPreference())
-        .longevity(review.getLongevity())
-        .sillage(review.getSillage())
-        .nickname(review.getMember().getMemberProfile().getNickname())
-        .build();
-    return findAllReviewByPerfumeId;
-  }
+//  public static FindAllReviewByPerfumeId create(Review review) {
+//    FindAllReviewByPerfumeId findAllReviewByPerfumeId = FindAllReviewByPerfumeId.builder()
+//        .season(review.getSeason())
+//        .preference(review.getPreference())
+//        .longevity(review.getLongevity())
+//        .sillage(review.getSillage())
+//        .nickname(review.getMember().getMemberProfile().getNickname())
+//        .build();
+//    return findAllReviewByPerfumeId;
+//  }
 
 }
