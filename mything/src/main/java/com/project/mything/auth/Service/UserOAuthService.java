@@ -35,8 +35,6 @@ public class UserOAuthService extends DefaultOAuth2UserService {
         if(!b){
             member = Member.builder()
                     .id(id)
-                    .year("1997")
-                    .gender(Gender.FEMALE)
                     .build();
             memberRepository.save(member);
         }else{

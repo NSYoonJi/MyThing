@@ -37,10 +37,11 @@ public class AuthController {
     public String index(){
         return "메인";
     }
+    // 회원가입시 추가 정보 입력
     @GetMapping(value = "/join")
-    public ResponseEntity<?> join(@RequestHeader HttpHeaders headers, @RequestBody JoinRequestDto joinRequestDto){
+    public ResponseEntity<?> join(@RequestHeader("Id")String id, @RequestBody JoinRequestDto joinRequestDto) throws Exception {
 
-//        kakaoAuthService.join(joinRequestDto);
+        kakaoAuthService.join(joinRequestDto, id);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
