@@ -1,7 +1,6 @@
 package com.project.mything.perfume.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.istack.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,22 +16,22 @@ public class PerfumeDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "perfume_detail_id")
     private Long id;
+
     @Column(name ="view_cnt")
-    @NotNull
     private Long viewCnt;
-    @NotNull
+
     private Long love;
-    @NotNull
+
     private Long ok;
-    @NotNull
+
     private Long hate;
-    @NotNull
+
     private Long spring;
-    @NotNull
+
     private Long summer;
-    @NotNull
+
     private Long fall;
-    @NotNull
+
     private Long winter;
 
     @OneToOne(fetch = FetchType.LAZY)
@@ -40,4 +39,12 @@ public class PerfumeDetail {
     @JsonIgnore
     private Perfume perfume;
 
+    //==비즈니스 로직==//
+    /**
+     * 조회수 증가
+     */
+    public Long updateViewCount(Long viewCnt) {
+        this.viewCnt = viewCnt + 1;
+        return this.viewCnt;
+    }
 }
