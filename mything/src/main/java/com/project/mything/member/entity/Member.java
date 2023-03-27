@@ -22,10 +22,6 @@ public class Member {
     @Column(name = "kakao_id")
     private Long id;
 
-    private String year;
-
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
 
     @OneToOne(mappedBy ="member", fetch = FetchType.LAZY)
     private RefreshToken refreshToken;

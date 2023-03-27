@@ -28,6 +28,10 @@ public class MemberProfile {
     private String nickname;
 
     private String image;
+    private String year;
+
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JsonIgnore

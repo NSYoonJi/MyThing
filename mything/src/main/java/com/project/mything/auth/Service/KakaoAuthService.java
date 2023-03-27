@@ -1,8 +1,11 @@
 package com.project.mything.auth.Service;
 
+import com.project.mything.auth.Repository.MemberProfileRepository;
+import com.project.mything.auth.Repository.MemberRepository;
 import com.project.mything.auth.dto.JoinRequestDto;
 import com.project.mything.member.entity.Member;
 import com.project.mything.member.entity.MemberProfile;
+import com.project.mything.member.entity.RefreshToken;
 import lombok.RequiredArgsConstructor;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
@@ -14,17 +17,38 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.http.*;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
-// rest api 용
 public class KakaoAuthService {
-    // 추가정보 - user 로 옮길까 고민
-    public void join(JoinRequestDto joinRequestDto) {
-        //Member member = new Member();
-        //MemberProfile memberProfile = new MemberProfile();
+    private final MemberProfileRepository memberProfileRepository;
+    private final MemberRepository memberRepository;
+    // 회원가입시 추가 정보
+    public void join(JoinRequestDto joinRequestDto, String id) throws Exception{
+        Long memberId = Long.parseLong(id);
+        // 멤버 존재 확인은 이미 위에서 처리
+        
+        // 닉네임 중복 확인 후
+        if (memberProfileRepository.findByNickname(joinRequestDto.getNickname()).isPresent()){
+            throw new Exception("이미 존재하는 닉네임 입니다");
+        }
 
+        Optional<Member> findMember = memberRepository.findById(memberId);
+
+
+        System.out.println("join id:"+ id);
+//        MemberProfile memberProfile = MemberProfile.builder().
+//                image(joinRequestDto.getImagePath()).
+//                year(joinRequestDto.getDate()).
+//                preferIncense(joinRequestDto.getPrefer_insence()).hateIncense().nickname().gender().member(findMember.get())
+//                .build();
+        //Member member = Member.builder().build()
+
+
+            // 유저 생성
     }
-
+// ==========================================안 씀요 ============================================
     public void kakaoLogin(String code, HttpServletResponse response) throws ParseException {
         // 1. 인가 코드로 엑세스 토큰 요청
         String accessToken = getAccessToken(code);
@@ -34,10 +58,6 @@ public class KakaoAuthService {
        // Member member = registerKakaoMember(kakaoId);
     }
 
-    private Member registerKakaoMember(Long kakaoId) {
-
-        return null;
-    }
 
     private Long getKakaoUserInfo(String accessToken) throws ParseException {
         // HttpBody 오브젝트 생성

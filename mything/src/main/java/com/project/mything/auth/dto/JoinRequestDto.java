@@ -13,8 +13,8 @@ public class JoinRequestDto {
 
     private String date;
 
-    private List<String> prefer_insence;
-    private List<String> hate_insence;
+    private String prefer_insence;
+    private String hate_insence;
 
 
 
