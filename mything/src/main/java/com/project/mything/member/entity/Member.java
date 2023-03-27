@@ -2,7 +2,7 @@ package com.project.mything.member.entity;
 
 import com.project.mything.review.entity.Review;
 import com.project.mything.survey.entity.SurveyResult;
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,6 +10,10 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "member")
 public class Member {
 
@@ -37,5 +41,6 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Review> reviewList = new ArrayList<>();
+
 
 }
