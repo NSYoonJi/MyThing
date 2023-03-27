@@ -16,6 +16,7 @@ import org.springframework.http.*;
 
 @Service
 @RequiredArgsConstructor
+// rest api 용
 public class KakaoAuthService {
     // 추가정보 - user 로 옮길까 고민
     public void join(JoinRequestDto joinRequestDto) {

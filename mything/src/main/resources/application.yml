@@ -1,5 +1,9 @@
 server:
   port: 8080
+jwt:
+  secret: SN5OUPJANIZLB/hZ1q7CsJbHvvuZ5xahm6DZMxTZyDI=
+  access-expiration-in-ms: 600000
+  refresh-expiration-in-ms: 1209600000
 spring:
   #redis ??
   redis:
