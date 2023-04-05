@@ -1,0 +1,32 @@
+.survey_image {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  .question_img {
+    border-radius: 4px;
+    width: 16.1458vw;
+    height: 15.625vw;
+  }
+
+  .text_box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.6vw 0;
+
+    .detail_text {
+      text-align: center;
+      font-size: 1vw;
+      font-weight: 600;
+      padding: 0.4vw 0;
+    }
+
+    .title_text {
+      text-align: center;
+      font-size: 1.1vw;
+      font-weight: 800;
+    }
+  }
+}

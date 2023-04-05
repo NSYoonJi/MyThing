@@ -1,0 +1,43 @@
+.init_page_two {
+  height: 70vh;
+  background-color: #f5ebe0;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 7vw;
+  
+  .img_box{
+    width: 53vw;
+
+    .init_img1 {
+      height: 100%;
+      width: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .text_box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-end;
+
+    .division_line {
+      
+      border-top: 0.12rem solid #b1b1b1;
+      margin: 4.8vw 0px;
+      width: 210px;
+    }
+
+    .init_text {
+      font-weight: 400;
+      font-size: 28px;
+      text-align: right;
+    }
+
+    .init_bold_text {
+      font-weight: 600;
+    }
+    
+  }
+
+}

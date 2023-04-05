@@ -1,0 +1,29 @@
+.row {
+
+  height: 60vh;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center; // 수직정렬
+  > h1 {
+    color: black;
+    text-align: center;
+    font-size: 45px;
+  }
+}
+
+.row__perfumes {
+  display: flex;
+  justify-content: space-between;
+  // border: 1px solid red;
+}
+
+.row__perfume {
+  height: 200px;
+  justify-content: center;
+}
+
+.click__style {
+  cursor: pointer;
+}

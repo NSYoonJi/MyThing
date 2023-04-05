@@ -1,0 +1,45 @@
+.perfume_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10% 0px 10%;
+  box-sizing: border-box;
+
+  .perfume {
+    display: flex;
+    .perfume_image {
+      > img {
+        width: 210px;
+        height: 280px;
+        object-fit: cover;
+      }
+    }
+
+    .perfume_desc {
+      margin-left: 100px;
+
+      > h3 {
+        color: gray;
+      }
+    }
+  }
+
+  .review {
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+
+    .review_box {
+      display: flex;
+
+      > div {
+        text-align: center;
+        margin: 0px 20px 0px 0px;
+
+        > p {
+          margin: 0px;
+        }
+      }
+      margin-top: auto;
+    }
+  }
+}

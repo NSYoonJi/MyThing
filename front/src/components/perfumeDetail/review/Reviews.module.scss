@@ -1,0 +1,12 @@
+.review_box {
+  padding: 0px 10% 0px 10%;
+
+  > h1 {
+    font-size: 4rem;
+  }
+
+  .reviews {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

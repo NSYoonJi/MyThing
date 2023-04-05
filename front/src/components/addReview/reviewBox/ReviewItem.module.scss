@@ -1,0 +1,67 @@
+.season {
+  width: 24%;
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 10px;
+
+  > p {
+    margin: 5px 0px 0px 0px;
+  }
+}
+
+.other {
+  width: calc(100% / 3 - 10px);
+  font-size: 1.5rem;
+  background-color: white;
+  border-radius: 10px;
+
+  > p {
+    margin: 13px 0px 0px 0px;
+  }
+}
+
+.season:hover {
+  cursor: pointer;
+}
+
+.other:hover {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #d2c8bc;
+}
+
+@media (max-width: 768px) {
+  .season {
+    > p {
+      margin: 5px 0px 0px 0px;
+      font-size: 1rem;
+    }
+  }
+
+  .other {
+    > p {
+      margin: 13px 0px 0px 0px;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .season {
+    height: 30px;
+    > p {
+      margin: 5px 0px 0px 0px;
+      font-size: 1rem;
+    }
+  }
+
+  .other {
+    height: 30px;
+    > p {
+      margin: 7px 0px 0px 0px;
+      font-size: 1rem;
+    }
+  }
+}

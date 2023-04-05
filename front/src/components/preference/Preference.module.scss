@@ -1,0 +1,39 @@
+.top {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+
+  .p {
+    font-size: 3rem;
+    margin: 3% 0px 0% 0px;
+  }
+
+  .selected_box {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .preference_class {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .button_box {
+    position: fixed;
+    right: 10%;
+    text-align: right;
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 1536px) {
+  .top {
+    width: 700px;
+
+    .selected_box {
+      height: 50px;
+    }
+  }
+}

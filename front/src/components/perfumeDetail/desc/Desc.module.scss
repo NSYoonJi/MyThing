@@ -1,0 +1,15 @@
+.description_box {
+  padding: 0px 10% 0px 10%;
+  box-sizing: content-box;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  padding-bottom: 5%;
+  > h1 {
+    font-size: 4rem;
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  background-color: #d2c8bc;
+}

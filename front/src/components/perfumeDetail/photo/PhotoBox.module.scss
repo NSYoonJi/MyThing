@@ -1,0 +1,25 @@
+.photo_box {
+  width: 100%;
+  padding: 1px 10% 0px 10%;
+  box-sizing: border-box;
+  background-color: #bbcfd7;
+
+  > h1 {
+    text-align: right;
+    font-size: 4rem;
+    margin-bottom: -50px;
+    color: white;
+  }
+  .image_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5% 20%;
+    box-sizing: border-box;
+
+    > img {
+      width: 26%;
+      height: 260px;
+    }
+  }
+}

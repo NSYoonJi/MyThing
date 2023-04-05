@@ -1,0 +1,47 @@
+.init_page_four {
+  height: 70vh;
+  background-color: #D2C8BC;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 7vw;
+
+  .init_img1 {
+    height: 100%;
+    width: 53vw;
+    object-fit: cover;
+  }
+  
+  .text_box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-end;
+
+    .division_line {
+      
+      border-top: 0.12rem solid #8f8f8f;
+      margin: 4.8vw 0px;
+      width: 210px;
+    }
+
+    .init_text {
+      font-weight: 400;
+      font-size: 28px;
+      text-align: right;
+    }
+
+    .init_bold_text {
+      font-weight: 600;
+    }
+    
+  }
+
+}
+
+.init_page_end {
+  height: 200px;
+  background-color: #f7f3ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

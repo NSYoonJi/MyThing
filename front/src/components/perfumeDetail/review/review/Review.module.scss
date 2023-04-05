@@ -1,0 +1,48 @@
+.review {
+  width: 30%;
+  margin: 0px 30px 100px 0px;
+
+  .review_item {
+    width: 60%;
+    border-radius: 25px;
+    padding: 5% 10%;
+    background-color: #d9d9d9;
+
+    > p {
+      margin: 5px 0px 0px 0px;
+      font-size: 1.5rem;
+    }
+  }
+  .slice1 {
+    margin: -2px 0 0 10%;
+    width: 10%;
+    height: 5%;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 50% 100%);
+    background-color: #d9d9d9;
+  }
+
+  .profile_box {
+    display: flex;
+    .profile_image {
+      width: 150px;
+      height: 150px;
+      margin: 0px 0px 0px 0px;
+
+      > img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .profile {
+      width: 280px;
+      padding: 0px 0px 0px 20px;
+      > h2 {
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

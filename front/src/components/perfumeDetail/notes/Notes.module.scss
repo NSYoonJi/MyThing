@@ -1,0 +1,59 @@
+.note_box {
+  position: relative;
+  height: 500px;
+  padding: 0px 10% 0px 10%;
+  box-sizing: border-box;
+
+  > h1 {
+    font-size: 4rem;
+  }
+
+  .notes {
+    position: absolute;
+    margin: -25px 0px 0px 750px;
+  }
+
+  .top {
+    width: 1500px;
+    display: flex;
+    margin: 75px 0 0 0px;
+
+    > p {
+      margin: -0.5% 50px 0px 0px;
+    }
+
+    .line1 {
+      width: 40%;
+      height: 0;
+      border: 1px solid black;
+    }
+  }
+
+  .middle {
+    width: 1500px;
+    display: flex;
+    margin: 105px 0 0 0px;
+    > p {
+      margin: -0.5% 30px 0px 0px;
+    }
+    .line2 {
+      width: 40%;
+      height: 0;
+      border: 1px solid black;
+    }
+  }
+
+  .base {
+    width: 1500px;
+    display: flex;
+    margin: 105px 0 0 0px;
+    > p {
+      margin: -0.5% 50px 0px 0px;
+    }
+    .line3 {
+      width: 40%;
+      height: 0;
+      border: 1px solid black;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.modal {
+  position: fixed;
+  z-index: 100;
+
+  margin: 0 auto;
+  width: 1334px;
+  height: 650px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+
+  border: 1px solid white;
+
+  .top {
+    height: 100%;
+
+    > p {
+      text-align: center;
+      font-size: 2rem;
+      margin: 10px 0px 20px 0px;
+    }
+
+    .note_box {
+      height: 500px;
+      overflow: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      box-sizing: border-box;
+
+      text-align: center;
+    }
+    .button_box {
+      text-align: right;
+      transform: scale(80%);
+    }
+
+    .note_box::-webkit-scrollbar {
+      width: 10px;
+    }
+    .note_box::-webkit-scrollbar-thumb {
+      background-color: rgb(100, 101, 105);
+      border-radius: 10px;
+      background-clip: padding-box;
+      border: 2px solid transparent;
+    }
+    .note_box::-webkit-scrollbar-track {
+      background-color: rgb(167, 165, 165);
+      border-radius: 10px;
+      box-shadow: inset 0px 0px 5px white;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.top {
+  margin: 90px 0px 0px 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(100, 101, 105);
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(167, 165, 165);
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
