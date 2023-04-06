@@ -38,7 +38,7 @@
 
 ### 기술 스택 👨‍💻
 
-![architecture](/uploads/b335511c5a1158c618d3790aa6d4cbd4/architecture.PNG)
+![아키텍처](/uploads/f9ee06acb0ed4f9a570c38a34cad64d8/아키텍처.png)
 
 ---
 
