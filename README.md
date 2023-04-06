@@ -170,13 +170,7 @@
 
 ## Api명세서(Swagger)
 
-
----
-
-## 피그마
-
+![api](/uploads/93c19a22fb168335fb7edca42acac1f2/api.PNG)
 ---
 
 
-
----
