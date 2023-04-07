@@ -209,9 +209,13 @@
 
 ---
 
-## Api명세서(Swagger)
+## Api 명세서
 
 ![api](/uploads/93c19a22fb168335fb7edca42acac1f2/api.PNG)
 ---
+
+## 기능 명세서
+
+![기능](/uploads/eee30f1a8eb786665cec9c70e61bfa4f/기능.PNG)
 
 
