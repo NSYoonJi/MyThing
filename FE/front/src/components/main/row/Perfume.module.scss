@@ -1,0 +1,59 @@
+.items {
+  // border: 1px solid red;
+}
+
+.perfume__img {
+  width: 180px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.perfume__brand {
+  text-align: center;
+  white-space: pre-wrap; /* 공백 유지 + 줄바꿈 처리 */
+  word-wrap: break-word; /* 긴 단어 잘림 처리 */
+  word-break: break-all;
+  width: 180px;
+  color: black;
+  // font-weight: bold;
+}
+
+.perfume__name {
+  padding: 10px 0 0 0;
+  text-align: center;
+  white-space: pre-wrap; /* 공백 유지 + 줄바꿈 처리 */
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 180px; // 글자 자르려면 가로길이 줘야함
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+@media (max-width: 480px) {
+  .perfume__img {
+    width: 70px;
+    height: 130px;
+  }
+
+  .perfume__brand {
+    text-align: center;
+    white-space: pre-wrap; /* 공백 유지 + 줄바꿈 처리 */
+    word-wrap: break-word; /* 긴 단어 잘림 처리 */
+    word-break: break-all;
+    width: 70px;
+    color: black;
+    // font-weight: bold;
+  }
+  .perfume__name {
+    padding: 10px 0 0 0;
+    text-align: center;
+    white-space: pre-wrap; /* 공백 유지 + 줄바꿈 처리 */
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 70px; // 글자 자르려면 가로길이 줘야함
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+  }
+}

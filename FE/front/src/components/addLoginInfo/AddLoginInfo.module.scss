@@ -1,0 +1,195 @@
+.add_info {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f3ef;
+
+  .form_box {
+    height: 32.8vw;
+    width: 65%;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0.2vw 0.2vw 0.2vw 0.2vw rgb(190, 190, 190);
+
+    .warning_message {
+      display: none;
+      margin: 0 12vw 0 0;
+      padding: 0.2vw 0 0 0;
+      font-size: 0.8vw;
+      font-weight: 600;
+      color: rgb(216, 0, 0);
+    }
+
+    .info_box {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      border-radius: 8px;
+
+      .button_box {
+        width: 55%;
+        height: 10%;
+        display: flex;
+        justify-content: right;
+        margin-top: 4vw;
+
+        .submit_button {
+          width: 40%;
+          height: 100%;
+          border: none;
+          cursor: pointer;
+          background-color: #bbcfd7;
+          border-radius: 8px;
+          font-size: 1.1vw;
+          font-weight: 900;
+
+          &:hover {
+            transition: all 0.3s;
+            background-color: #97bdcc;
+          }
+        }
+      }
+
+      .nickname_box {
+        width: 50%;
+        height: 10%;
+        background-color: #f5ebe0;
+        border: none;
+        border-radius: 8px;
+        padding: 0 1vw 0 1vw;
+        margin: 0 0 0 0;
+        font-size: 1.1vw;
+        font-weight: 600;
+      }
+
+      .date_box {
+        width: 50%;
+        height: 10%;
+        background-color: #f5ebe0;
+        color: #6b6b6b;
+        border: none;
+        border-radius: 8px;
+        padding: 0 1vw 0 1vw;
+        margin: 2vw 0 0 0;
+        font-size: 1.1vw;
+        font-weight: 600;
+
+        &::before {
+          content: attr(data-placeholder);
+          width: 100%;
+        }
+
+        &:focus::before {
+          display: none;
+        }
+
+        &:valid::before {
+          display: none;
+        }
+      }
+
+      .gender_box {
+        width: 55%;
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0px 0 0px;
+        margin: 2vw 0 0 0;
+
+
+        .gender_button {
+          width: 45%;
+          height: 100%;
+          background-color: #f5ebe0;
+          border: none;
+          cursor: pointer;
+          border-radius: 8px;
+          font-size: 1.3vw;
+          font-weight: 800;
+
+          &:hover {
+            transition: all 0.3s;
+            background-color: rgba(255, 182, 182, 0.8);;
+          }
+        }
+
+        .seleted_gender_box {
+          background-color: #ecbdbd;
+        }
+      }
+    }
+
+    .img_box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+      height: 100%;
+      border-radius: 8px;
+      background-color: #d9d9d9;
+
+      .file_select_box {
+        width: 65%;
+        display: flex;
+        margin-top: 1vw;
+        justify-content: center;
+
+        .upload_file_name {
+          height: 1.3vw;
+          border: 1px solid #dddddd;
+          width: 53%;
+          color: #999999;
+          background-color: #f0f0f0;
+          text-align: center;
+          margin-right: 0.2vw;
+          border-radius: 4px;
+          padding-top: 0.3vw;
+          font-size: 0.8vw;
+          font-weight: 600;
+        }
+
+        .label {
+          height: 1.3vw;
+          width: 30%;
+          padding-top: 0.3vw;
+          color: #fff;
+          background-color: #999999;
+          cursor: pointer;
+          margin-left: 0.2vw;
+          text-align: center;
+          border-radius: 4px;
+          font-size: 0.8vw;
+          font-weight: 600;
+
+          &:hover {
+            transition: all 0.3s;
+            background-color: #868686;
+          }
+        }
+
+        .file_input {
+          position: absolute;
+          width: 0;
+          height: 0;
+          padding: 0;
+          overflow: hidden;
+          border: 0;
+        }
+      }
+
+      .preview_img {
+        width: 65%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+  }
+}

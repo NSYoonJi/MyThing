@@ -1,0 +1,31 @@
+.note_item {
+  margin: 0px 50px 0px 50px;
+
+  > p {
+    margin: 0 auto 10px auto;
+  }
+
+  .image_box {
+    object-fit: cover;
+    position: relative;
+
+    > img:hover {
+      cursor: pointer;
+    }
+
+    .image {
+      width: 150px;
+    }
+
+    .checked {
+      display: none;
+    }
+
+    .is_selected {
+      display: block;
+      position: absolute;
+      width: 25%;
+      margin: 5px;
+    }
+  }
+}

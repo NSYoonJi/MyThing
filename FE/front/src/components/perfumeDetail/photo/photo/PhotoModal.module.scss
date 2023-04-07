@@ -1,0 +1,37 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 100;
+}
+
+.box {
+  .image {
+    width: 600px;
+    height: 700px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+    transform: translate(-50%, -50%);
+  }
+
+  .like {
+    position: fixed;
+    color: red;
+    padding-bottom: 6px;
+    box-sizing: border-box;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    z-index: 200;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+* {
+  font-family: "Nanum Myeongjo", serif;
+}
+
+.banner {
+  top: 20px;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.banner__contents {
+  height: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32%;
+  text-align: right;
+}
+
+.banner__text {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.banner__button {
+  padding-top: 10px;
+}
+
+.button {
+  background-color: #f7f3ef;
+  font-size: 20px; /* 글꼴 크기 */
+  padding: 10px 20px; /* 여백 */
+  cursor: pointer; /* 커서 모양 변경 */
+}
+
+@media (max-width: 480px) {
+  .banner__contents {
+    width: 100%;
+    text-align: left;
+  }
+
+  .banner__text {
+    font-size: 30px;
+    font-weight: 400;
+  }
+}

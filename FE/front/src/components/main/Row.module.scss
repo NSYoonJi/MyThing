@@ -1,0 +1,34 @@
+.row {
+  height: 60vh;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center; // 수직정렬
+  > h1 {
+    color: black;
+    text-align: center;
+    font-size: 45px;
+  }
+}
+
+.row__perfumes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.row__perfume {
+  align-items: center;
+  display: flex;
+  font-size: 45px;
+
+  &:hover {
+    transform: scale(1.5); // 커짐
+    transition: 400ms all ease-in-out; // 부드럽게
+    cursor: pointer;
+  }
+}
+
+.click__style {
+  cursor: pointer;
+}

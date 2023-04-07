@@ -1,0 +1,11 @@
+.search_result {
+  height: 30px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 4px;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

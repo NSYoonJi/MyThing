@@ -1,0 +1,18 @@
+.search_result {
+  height: 30px;
+  width: 700px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 4px;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 700px) {
+  .search_result {
+    width: 170px;
+  }
+}
