@@ -35,7 +35,7 @@
 
 ### 기술 스택 👨‍💻
 
-![아키](/uploads/f606024e5eacd101f59c3e822500090f/아키.png)
+![아키텍처](https://user-images.githubusercontent.com/63328574/231663417-36ccb445-d993-4dc7-9bd5-e04d6dae0584.png)
 
 ---
 
@@ -70,7 +70,7 @@
 
 ## SSAFY 8기 2학기 특화 프로젝트 - 취:향
 
-![mything](/uploads/15f10be22198007568527ed89021437e/mything.PNG)
+
 
 ---
 
@@ -114,7 +114,7 @@
 
 ### ERD
 
-![ERD](/uploads/7ff3b1e455918bcf2397e2d3b4a898aa/ERD.png)
+![ERD](https://user-images.githubusercontent.com/63328574/231662811-61269ff3-e217-4d88-9823-004c9117bae1.png)
 
 
 
@@ -207,18 +207,18 @@
 
 - 로그인 시퀀스 다이어그램
 
-![시퀀스](/uploads/8080f755de33293d8e79dea37e4a0a49/시퀀스.png)
+![시퀀스](https://user-images.githubusercontent.com/63328574/231662892-0eccedc8-2c6a-468a-8add-2b2f602ba093.png)
 
 
 ---
 
 ## Api 명세서
 
-![api](/uploads/93c19a22fb168335fb7edca42acac1f2/api.PNG)
+![api](https://user-images.githubusercontent.com/63328574/231663757-9eeacfa2-5eca-4c81-8933-00d241b5e366.PNG)
 ---
 
 ## 기능 명세서
 
-![기능](/uploads/eee30f1a8eb786665cec9c70e61bfa4f/기능.PNG)
+![기능](https://user-images.githubusercontent.com/63328574/231662928-0a6bd2c6-e53d-4f33-8134-640c2c6c86a9.PNG)
 
 
