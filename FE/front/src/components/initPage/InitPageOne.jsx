@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import InitPageButton from "../common/button/InitPageButton";
 import logo_200 from "../../asset/images/logo/logo_200.png";
 import ArrowDownwardRoundedIcon from "@mui/icons-material/ArrowDownwardRounded";
+import { API_END_POINT, END_POINT } from "../../constants";
 
 import styles from "./InitPageOne.module.scss";
 import { mode } from "../../constants";
@@ -25,7 +26,7 @@ const InitPageOne = () => {
             {mode === "local" && (
               <a
                 className={styles.login_text}
-                href={`http://j8b207.p.ssafy.io/api/oauth2/authorization/kakao?redirect_uri=http://localhost:3000/oauth/redirect`}
+                href={API_END_POINT + `/oauth2/authorization/kakao?redirect_uri=http://localhost:3000/oauth/redirect`}
               >
                 로그인
               </a>
@@ -33,7 +34,7 @@ const InitPageOne = () => {
             {mode === "server" && (
               <a
                 className={styles.login_text}
-                href={`http://j8b207.p.ssafy.io/api/oauth2/authorization/kakao?redirect_uri=http://j8b207.p.ssafy.io/oauth/redirect`}
+                href={`${API_END_POINT}/oauth2/authorization/kakao?redirect_uri=${END_POINT}/oauth/redirect`}
               >
                 로그인
               </a>

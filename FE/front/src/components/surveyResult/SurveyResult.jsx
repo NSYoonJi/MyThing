@@ -5,7 +5,7 @@ import { postSurveyResult, postMemberSurveyResult, getUserInfo } from "../../sev
 import styles from "./SurveyResult.module.scss";
 import { Link } from "react-router-dom";
 import Loading from "../common/Loading";
-import { mode } from "../../constants";
+import { API_END_POINT, END_POINT, mode } from "../../constants";
 
 export default function SurveyResult() {
   const data = JSON.parse(localStorage.getItem("surveyResult"));
@@ -100,14 +100,14 @@ export default function SurveyResult() {
             <div className={styles.surveybutton}>
               {mode === "local" && (
                 <a
-                  href={`http://j8b207.p.ssafy.io/api/oauth2/authorization/kakao?redirect_uri=http://localhost:3000/oauth/redirect`}
+                  href={`${API_END_POINT}/oauth2/authorization/kakao?redirect_uri=http://localhost:3000/oauth/redirect`}
                 >
                   취:향 로그인
                 </a>
               )}
               {mode === "server" && (
                 <a
-                  href={`http://j8b207.p.ssafy.io/api/oauth2/authorization/kakao?redirect_uri=http://j8b207.p.ssafy.io/oauth/redirect`}
+                  href={`${API_END_POINT}/oauth2/authorization/kakao?redirect_uri=${END_POINT}/oauth/redirect`}
                 >
                   취:향 로그인
                 </a>
