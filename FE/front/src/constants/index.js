@@ -1,4 +1,4 @@
-export const API_END_POINT = "https://j8b207.p.ssafy.io/api";
+export const API_END_POINT = "https://makeyourpreference.com/api";
 
 // local, server
 export const mode = "server";
