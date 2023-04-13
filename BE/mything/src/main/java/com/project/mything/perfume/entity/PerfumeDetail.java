@@ -1,9 +1,7 @@
 package com.project.mything.perfume.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.project.mything.review.entity.Longevity;
 import com.project.mything.review.entity.Preference;
-import com.project.mything.review.entity.Sillage;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +19,7 @@ public class PerfumeDetail {
     @Column(name = "perfume_detail_id")
     private Long id;
 
-    @Column(name ="view_cnt")
+    @Column(name = "view_cnt")
     private Long viewCnt;
 
     private Long love;
@@ -44,6 +42,7 @@ public class PerfumeDetail {
     private Perfume perfume;
 
     //==비즈니스 로직==//
+
     /**
      * 조회수 증가
      */

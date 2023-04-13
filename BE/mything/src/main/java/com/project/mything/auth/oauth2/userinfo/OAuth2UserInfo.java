@@ -13,14 +13,4 @@ public class OAuth2UserInfo {
     public String getId() {
         return String.valueOf(attributes.get("id"));
     }
-
-//    public String getImageUrl() {
-//        Map<String, Object> account = (Map<String, Object>) attributes.get("kakao_account");
-//        Map<String, Object> profile = (Map<String, Object>) account.get("profile");
-//
-//        if (account == null || profile == null) {
-//            return null;
-//        }
-//        return (String) profile.get("thumbnail_image_url");
-//    }
 }

@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,7 +21,8 @@ public class FindSurveyResponse {
     private String[] answerB;
     private String[] answerC;
     private String[] answerD;
-    private Map<String,String> images;
+    private Map<String, String> images;
+
     public static FindSurveyResponse create(String q, String[] a, String[] b, String[] c, String[] d, Map<String, String> images) {
         FindSurveyResponse findSurveyResponse = FindSurveyResponse.builder()
                 .question(q)

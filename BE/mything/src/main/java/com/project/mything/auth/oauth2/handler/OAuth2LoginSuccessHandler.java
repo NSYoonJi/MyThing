@@ -36,7 +36,7 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
             CustomOAuth2User oAuth2User = (CustomOAuth2User) authentication.getPrincipal();
 
             // User의 Role이 GUEST일 경우 처음 요청한 회원이므로 회원가입 페이지로 리다이렉트
-            if(oAuth2User.getRole() == Role.GUEST) {
+            if (oAuth2User.getRole() == Role.GUEST) {
                 String accessToken = jwtService.createAccessToken(oAuth2User.getTestId());
                 response.addHeader(jwtService.getAccessHeader(), "Bearer " + accessToken);
 
@@ -54,13 +54,13 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
 
     private void loginSuccess(HttpServletResponse response, CustomOAuth2User oAuth2User) throws IOException {
         String memberId = oAuth2User.getTestId();
-        Optional<Member> findMember =  memberRepository.findById(Long.parseLong(memberId));
+        Optional<Member> findMember = memberRepository.findById(Long.parseLong(memberId));
         Member member = findMember.orElseThrow(() -> new IllegalStateException("유저가 존재하지 않음"));
         String accessToken = jwtService.createAccessToken(memberId);
         String refreshToken = jwtService.createRefreshToken();
 
         RefreshToken pastToken = refreshTokenRepository.findByMemberId(member.getId())
-                .orElseThrow(()-> new IllegalStateException("리프레쉬 토큰 없음"));
+                .orElseThrow(() -> new IllegalStateException("리프레쉬 토큰 없음"));
 
         pastToken.updateRefreshToken(refreshToken);
 

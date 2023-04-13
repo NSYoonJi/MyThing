@@ -16,13 +16,17 @@ import java.util.List;
  * 2023-03-24        hagnoykmik       최초 생성
  */
 public interface PerfumeService {
-  FindPerfumeResponse findPerfume(Long perfumeId);
-  List<FindAllPopularPerfumeResponse> findTop12ByOrderByViewCntDesc();
-  FindReviewImageResponse findReviewImage(String token, Long reviewImageId);
-  IsLikeResponse isLike(String token, IsLikeRequest request);
+    FindPerfumeResponse findPerfume(Long perfumeId);
 
-  List<SearchPerfumeResponse> searchPerfume(String perfume);
-  List<SearchPerfumeByAgeResponse> searchPerfumeByAge();
+    List<FindAllPopularPerfumeResponse> findTop12ByOrderByViewCntDesc();
+
+    FindReviewImageResponse findReviewImage(String token, Long reviewImageId);
+
+    IsLikeResponse isLike(String token, IsLikeRequest request);
+
+    List<SearchPerfumeResponse> searchPerfume(String perfume);
+
+    List<SearchPerfumeByAgeResponse> searchPerfumeByAge();
 
 }
 

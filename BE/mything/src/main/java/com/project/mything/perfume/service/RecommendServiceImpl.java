@@ -52,7 +52,7 @@ public class RecommendServiceImpl implements RecommendService{
      */
     @Override
     public List<RecommendPerfumesResponse> findPerfumeByClick(Long perfumeId) throws IOException {
-        String url = "https://j8b207.p.ssafy.io/bigdata/recommend/survey/" + perfumeId + "/";
+        String url = "https://makeyourpreference.com/bigdata/recommend/survey/" + perfumeId + "/";
         Response execute = springToDjango(url);
         List<RecommendPerfumesResponse> recommendPerfumesResponse = recommend(execute);
         return recommendPerfumesResponse;
@@ -77,7 +77,7 @@ public class RecommendServiceImpl implements RecommendService{
         }
 
         Long perfumeId = reviews.get(reviews.size() - 1).getPerfume().getId();
-        String url = "https://j8b207.p.ssafy.io/bigdata/recommend/recommend-review/" + perfumeId + "/";
+        String url = "https://makeyourpreference.com/bigdata/recommend/recommend-review/" + perfumeId + "/";
         Response execute = springToDjango(url);
         String s = execute.body().toString();
         List<RecommendPerfumesResponse> recommendPerfumesResponse = recommend(execute);
@@ -102,7 +102,7 @@ public class RecommendServiceImpl implements RecommendService{
             );
             return responseList;
         }
-        String url = "https://j8b207.p.ssafy.io/bigdata/recommend/survey/" + allByMemberId.get(allByMemberId.size() - 1).getPerfume().getId() + "/";
+        String url = "https://makeyourpreference.com/bigdata/recommend/survey/" + allByMemberId.get(allByMemberId.size() - 1).getPerfume().getId() + "/";
         Response execute = springToDjango(url);
         List<RecommendPerfumesResponse> recommendPerfumesResponse = recommend(execute);
         return recommendPerfumesResponse;
@@ -126,7 +126,7 @@ public class RecommendServiceImpl implements RecommendService{
             return responseList;
         }
 
-        String url = "https://j8b207.p.ssafy.io/bigdata/recommend/survey-reverse/" + allByMemberId.get(allByMemberId.size() - 1).getPerfume().getId() + "/";
+        String url = "https://makeyourpreference.com/bigdata/recommend/survey-reverse/" + allByMemberId.get(allByMemberId.size() - 1).getPerfume().getId() + "/";
         Response execute = springToDjango(url);
         List<RecommendPerfumesResponse> recommendPerfumesResponse = recommend(execute);
         return recommendPerfumesResponse;
@@ -247,14 +247,6 @@ public class RecommendServiceImpl implements RecommendService{
                             .build()
             );
         }
-
-        // 향수 id, 이름, 브랜드, img만 return
-//        ModelMapper mapper = new ModelMapper();
-////    mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-//        List<RecommendPerfumesResponse> recommendPerfumesResponse =
-//                perfumesByClick.stream()
-//                        .map(i -> mapper.map(i, RecommendPerfumesResponse.class))
-//                        .collect(Collectors.toList());
         return recommendPerfumesResponse;
     }
 
@@ -287,7 +279,7 @@ public class RecommendServiceImpl implements RecommendService{
      * 취향 조사 결과 Django랑 통신
      */
     public Response postSpringToDjango(HashMap<String, String[]> prefer) throws IOException{
-        String url = "https://j8b207.p.ssafy.io/bigdata/recommend/prefer/";
+        String url = "https://makeyourpreference.com/bigdata/recommend/prefer/";
         OkHttpClient okHttpClient = new OkHttpClient();
         Gson gson = new Gson();
         String json = gson.toJson(prefer);

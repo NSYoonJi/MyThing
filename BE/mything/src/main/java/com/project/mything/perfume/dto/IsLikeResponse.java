@@ -19,16 +19,16 @@ import lombok.Data;
 @Data
 @Builder
 public class IsLikeResponse {
-  private String likeImageList;
-  private Boolean isLike;
-  private Long likeCnt;
+    private String likeImageList;
+    private Boolean isLike;
+    private Long likeCnt;
 
-  public static IsLikeResponse create(String likeImageList, Boolean isLike, Long likeCnt) {
-    IsLikeResponse isLikeResponse = IsLikeResponse.builder()
-        .likeImageList(likeImageList)
-        .isLike(isLike)
-        .likeCnt(likeCnt)
-        .build();
-    return isLikeResponse;
-  }
+    public static IsLikeResponse create(String likeImageList, Boolean isLike, Long likeCnt) {
+        IsLikeResponse isLikeResponse = IsLikeResponse.builder()
+                .likeImageList(likeImageList)
+                .isLike(isLike)
+                .likeCnt(likeCnt)
+                .build();
+        return isLikeResponse;
+    }
 }

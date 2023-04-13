@@ -2,12 +2,13 @@ package com.project.mything.review.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.mything.member.entity.Member;
-import com.project.mything.perfume.entity.*;
+import com.project.mything.perfume.entity.Perfume;
 import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Optional;
 
 @Entity
 @Getter
@@ -64,10 +65,9 @@ public class Review {
     }
 
 
-
     //==연관관계 편의 메서드==//
     public void addMember(Member member) {
-        if(this.member!=null){
+        if (this.member != null) {
             this.member.getReviewList().remove(this);
         }
         this.member = member;
@@ -75,7 +75,7 @@ public class Review {
     }
 
     public void addPerfume(Perfume perfume) {
-        if(this.perfume!=null){
+        if (this.perfume != null) {
             this.perfume.getReviewList().remove(this);
         }
         this.perfume = perfume;

@@ -33,7 +33,7 @@ public class Note {
     // == 연관관계 편의 메서드 == //
     // JPA에서 쿼리문 안 보내도 바로 조회 가능하다.
     public void addCategory(Category category) {
-        if(this.category!=null){
+        if (this.category != null) {
             this.category.getNoteList().remove(this);
         }
         this.category = category;

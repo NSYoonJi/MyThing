@@ -11,7 +11,6 @@ public class InfoResponseDto {
     private List<String> preference;
     private String nickname;
     private String imagePath;
-
     private String gender;
     private String birth;
 

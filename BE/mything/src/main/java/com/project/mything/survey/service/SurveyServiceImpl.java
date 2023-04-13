@@ -4,19 +4,19 @@ import com.project.mything.auth.jwt.service.JwtService;
 import com.project.mything.survey.dto.FindSurveyResponse;
 import com.project.mything.survey.dto.FindSurveyResultResponse;
 import com.project.mything.survey.dto.surveyquestion.SurveyQuestion;
-
-import java.util.*;
-import java.util.stream.Collectors;
-
 import com.project.mything.survey.entity.Survey;
 import com.project.mything.survey.entity.SurveyResult;
 import com.project.mything.survey.repository.SurveyRepository;
 import com.project.mything.survey.repository.SurveyResultRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * packageName    : com.project.mything.survey.service fileName       : SurveyImpl author         :

@@ -31,7 +31,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
-
     private final JwtService jwtService;
     private final MemberRepository memberRepository;
     private final RefreshTokenRepository refreshTokenRepository;

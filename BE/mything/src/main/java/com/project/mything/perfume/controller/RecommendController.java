@@ -23,9 +23,9 @@ public class RecommendController {
     private final RecommendService recommendService;
     private final JwtService jwtService;
 
-   /*
-    *   클릭 기반 추천
-    */
+    /*
+     *   클릭 기반 추천
+     */
     @GetMapping("/recommend/survey/{perfumeId}")
     public ResponseEntity<List<RecommendPerfumesResponse>> findPerfumeByClick(@PathVariable Long perfumeId) throws IOException {
         List<RecommendPerfumesResponse> perfumeByClick = recommendService.findPerfumeByClick(perfumeId);
@@ -36,7 +36,7 @@ public class RecommendController {
      *   리뷰 기반 추천
      */
     @GetMapping("/recommend/recommend-review")
-    public ResponseEntity<List<RecommendPerfumesResponse>> findPerfumeByReview(@RequestHeader("Authorization")String token) throws IOException {
+    public ResponseEntity<List<RecommendPerfumesResponse>> findPerfumeByReview(@RequestHeader("Authorization") String token) throws IOException {
         Long mid = jwtService.getUserIdFromToken(token);
         List<RecommendPerfumesResponse> perfumeByClick = recommendService.findPerfumeByReview(token, mid);
         return ResponseEntity.status(HttpStatus.OK).body(perfumeByClick);
@@ -47,7 +47,7 @@ public class RecommendController {
      */
 
     @GetMapping("/recommend/survey")
-    public ResponseEntity<List<RecommendPerfumesResponse>> findPerfumeBySurvey(@RequestHeader("Authorization")String token) throws IOException {
+    public ResponseEntity<List<RecommendPerfumesResponse>> findPerfumeBySurvey(@RequestHeader("Authorization") String token) throws IOException {
 
         List<RecommendPerfumesResponse> perfumeByClick = recommendService.findPerfumeBySurvey(token);
         return ResponseEntity.status(HttpStatus.OK).body(perfumeByClick);
@@ -57,7 +57,7 @@ public class RecommendController {
      *   설문 기반 반대 추천
      */
     @GetMapping("/recommend/survey-reverse")
-    public ResponseEntity<List<RecommendPerfumesResponse>> findPerfumeBySurveyReverse(@RequestHeader("Authorization")String token) throws IOException {
+    public ResponseEntity<List<RecommendPerfumesResponse>> findPerfumeBySurveyReverse(@RequestHeader("Authorization") String token) throws IOException {
         List<RecommendPerfumesResponse> perfumeBySurveyReverse = recommendService.findPerfumeBySurveyReverse(token);
         return ResponseEntity.status(HttpStatus.OK).body(perfumeBySurveyReverse);
     }
@@ -76,7 +76,7 @@ public class RecommendController {
      */
 
     @GetMapping("/recommend/prefer")
-    public ResponseEntity<List<RecommendPerfumesResponse>> findUserPerfumeByPrefer(@RequestHeader("Authorization")String token) throws IOException {
+    public ResponseEntity<List<RecommendPerfumesResponse>> findUserPerfumeByPrefer(@RequestHeader("Authorization") String token) throws IOException {
         List<RecommendPerfumesResponse> perfumeBySurveyReverse = recommendService.findUserPerfumeByPrefer(token);
         return ResponseEntity.status(HttpStatus.OK).body(perfumeBySurveyReverse);
     }
@@ -85,7 +85,7 @@ public class RecommendController {
      * 등록된 유저가 취향 조사 후 저장
      */
     @PostMapping("/recommend/user-survey")
-    public ResponseEntity<RecommendPerfumesResponse> findPerfumeByUserServey(@RequestHeader("Authorization")String token, @RequestBody UserServeyRequest userServeyRequest) throws IOException{
+    public ResponseEntity<RecommendPerfumesResponse> findPerfumeByUserServey(@RequestHeader("Authorization") String token, @RequestBody UserServeyRequest userServeyRequest) throws IOException {
         RecommendPerfumesResponse perfumeByUserSurvey = recommendService.findPerfumeByUserSurvey(token, userServeyRequest);
         return ResponseEntity.status(HttpStatus.OK).body(perfumeByUserSurvey);
     }
@@ -103,7 +103,7 @@ public class RecommendController {
      * 카테고리 클릭시 노트 조회
      */
     @GetMapping("/guest/recommend/{category}")
-    public ResponseEntity<List<FindNotesByCategoryResponse>> findNoteByCategory(@PathVariable String category){
+    public ResponseEntity<List<FindNotesByCategoryResponse>> findNoteByCategory(@PathVariable String category) {
         List<FindNotesByCategoryResponse> notesByCategory = recommendService.findNotesByCategory(category);
         return ResponseEntity.status(HttpStatus.OK).body(notesByCategory);
     }

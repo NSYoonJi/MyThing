@@ -1,6 +1,5 @@
 package com.project.mything.perfume.dto;
 
-import com.project.mything.perfume.entity.Perfume;
 import com.project.mything.perfume.entity.PerfumeDetail;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,19 +15,19 @@ import lombok.Data;
 @Data
 @Builder
 public class FindAllPopularPerfumeResponse {
-  private Long id;
-  private String name;
-  private String brand;
-  private String imgURL;
+    private Long id;
+    private String name;
+    private String brand;
+    private String imgURL;
 
-  public static FindAllPopularPerfumeResponse create(PerfumeDetail perfume) {
-    FindAllPopularPerfumeResponse findAllPopularPerfumeResponse = FindAllPopularPerfumeResponse.builder()
-        .id(perfume.getPerfume().getId())
-        .name(perfume.getPerfume().getKoName())
-        .brand(perfume.getPerfume().getKoBrand())
-        .imgURL(perfume.getPerfume().getImgURL())
-        .build();
-    return findAllPopularPerfumeResponse;
+    public static FindAllPopularPerfumeResponse create(PerfumeDetail perfume) {
+        FindAllPopularPerfumeResponse findAllPopularPerfumeResponse = FindAllPopularPerfumeResponse.builder()
+                .id(perfume.getPerfume().getId())
+                .name(perfume.getPerfume().getKoName())
+                .brand(perfume.getPerfume().getKoBrand())
+                .imgURL(perfume.getPerfume().getImgURL())
+                .build();
+        return findAllPopularPerfumeResponse;
 
-  }
+    }
 }

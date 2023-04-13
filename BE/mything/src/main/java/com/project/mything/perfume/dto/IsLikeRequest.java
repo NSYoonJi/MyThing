@@ -15,7 +15,7 @@ import lombok.Data;
 @Builder
 public class IsLikeRequest {
 
-  private Long reviewImageId;
-  private Boolean isLike;
+    private Long reviewImageId;
+    private Boolean isLike;
 
 }

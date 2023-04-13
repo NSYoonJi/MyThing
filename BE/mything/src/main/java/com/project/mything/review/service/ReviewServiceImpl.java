@@ -1,26 +1,26 @@
 package com.project.mything.review.service;
 
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.project.mything.auth.jwt.service.JwtService;
 import com.project.mything.member.entity.Member;
+import com.project.mything.member.repository.MemberRepository;
 import com.project.mything.perfume.entity.Perfume;
 import com.project.mything.perfume.entity.PerfumeDetail;
 import com.project.mything.perfume.repository.PerfumeDetailRepository;
 import com.project.mything.perfume.repository.PerfumeRepository;
 import com.project.mything.review.dto.*;
-import com.project.mything.review.entity.*;
-import com.project.mything.member.repository.MemberRepository;
+import com.project.mything.review.entity.Review;
+import com.project.mything.review.entity.ReviewImage;
 import com.project.mything.review.repository.ReviewImageRepository;
 import com.project.mything.review.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
-import com.amazonaws.services.s3.model.ObjectMetadata;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -59,7 +59,7 @@ public class ReviewServiceImpl implements ReviewService {
     @Transactional
     public CreateReviewResponse review(String token, CreateReviewRequest request, MultipartFile image, Long memberId) throws IOException {
         Optional<Member> member = memberRepository.findById(memberId);
-        Member findMember = member.orElseThrow(() -> new IllegalStateException("회원이 존재하지 않습니다.") );
+        Member findMember = member.orElseThrow(() -> new IllegalStateException("회원이 존재하지 않습니다."));
 
         Optional<Perfume> perfume = perfumeRepository.findById(request.getPerfumeId());
         Perfume findPerfume = perfume.orElseThrow(() -> new IllegalStateException("향수가 존재하지 않습니다"));
@@ -97,13 +97,13 @@ public class ReviewServiceImpl implements ReviewService {
             return new CreateReviewResponse(review.getId());
         }
     }
-    
+
     // 리뷰 목록 조회
     @Override
     public List<ReadReviewResponse> readReviews(String token) {
         Long memberId = jwtService.getUserIdFromToken(token);
         Optional<Member> member = memberRepository.findById(memberId);
-        Member findMember = member.orElseThrow(() -> new IllegalStateException("회원이 존재하지 않습니다.") );
+        Member findMember = member.orElseThrow(() -> new IllegalStateException("회원이 존재하지 않습니다."));
 
         List<Review> reviews = findMember.getReviewList();
 

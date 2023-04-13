@@ -2,7 +2,6 @@ package com.project.mything.survey.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.mything.member.entity.Member;
-import com.project.mything.perfume.entity.Category;
 import com.project.mything.perfume.entity.Perfume;
 import lombok.*;
 

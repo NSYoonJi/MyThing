@@ -1,6 +1,5 @@
 package com.project.mything.survey.dto;
 
-import com.project.mything.survey.entity.Survey;
 import com.project.mything.survey.entity.SurveyResult;
 import lombok.Data;
 

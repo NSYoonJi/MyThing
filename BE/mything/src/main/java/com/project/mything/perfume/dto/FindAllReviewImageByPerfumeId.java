@@ -16,17 +16,17 @@ import lombok.Data;
 @Data
 @Builder
 public class FindAllReviewImageByPerfumeId {
-  private String imgURL;
-  private Long likeCnt;
-  private Long reviewImageId;
+    private String imgURL;
+    private Long likeCnt;
+    private Long reviewImageId;
 
-  public static FindAllReviewImageByPerfumeId create(Review review) {
-    FindAllReviewImageByPerfumeId findAllReviewImageByPerfumeId = FindAllReviewImageByPerfumeId.builder()
-        .imgURL(review.getReviewImage().getImage())
-        .likeCnt(review.getReviewImage().getLikeCnt())
-        .reviewImageId(review.getReviewImage().getId())
-        .build();
-    return findAllReviewImageByPerfumeId;
-  }
+    public static FindAllReviewImageByPerfumeId create(Review review) {
+        FindAllReviewImageByPerfumeId findAllReviewImageByPerfumeId = FindAllReviewImageByPerfumeId.builder()
+                .imgURL(review.getReviewImage().getImage())
+                .likeCnt(review.getReviewImage().getLikeCnt())
+                .reviewImageId(review.getReviewImage().getId())
+                .build();
+        return findAllReviewImageByPerfumeId;
+    }
 
 }

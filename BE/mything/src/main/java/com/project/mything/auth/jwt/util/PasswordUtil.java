@@ -3,7 +3,6 @@ package com.project.mything.auth.jwt.util;
 import java.util.Random;
 
 public class PasswordUtil {
-
     public static String generateRandomPassword() {
         int index = 0;
         char[] charSet = new char[] {

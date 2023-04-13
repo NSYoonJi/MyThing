@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RecommendPerfumesResponse implements Serializable{
+public class RecommendPerfumesResponse implements Serializable {
     private Long id;
     private String name;
     private String brand;

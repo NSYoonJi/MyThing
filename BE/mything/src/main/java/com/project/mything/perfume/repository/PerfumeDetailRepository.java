@@ -2,7 +2,9 @@ package com.project.mything.perfume.repository;
 
 import com.project.mything.perfume.entity.Perfume;
 import com.project.mything.perfume.entity.PerfumeDetail;
+
 import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -13,6 +15,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * 생성
  */
 public interface PerfumeDetailRepository extends JpaRepository<PerfumeDetail, Long> {
-  PerfumeDetail findByPerfume_Id(Long perfumeId);
-  List<PerfumeDetail> findTop12ByOrderByViewCntDesc();
+    PerfumeDetail findByPerfume_Id(Long perfumeId);
+
+    List<PerfumeDetail> findTop12ByOrderByViewCntDesc();
 }

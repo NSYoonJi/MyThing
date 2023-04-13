@@ -1,14 +1,14 @@
 package com.project.mything.perfume.dto;
 
-import com.project.mything.review.entity.Preference;
-import com.project.mything.review.entity.Review;
-import com.project.mything.review.entity.Sillage;
 import com.project.mything.review.entity.Longevity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import com.project.mything.review.entity.Preference;
+import com.project.mything.review.entity.Sillage;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 /**
  * packageName    : com.project.mything.perfume.dto fileName       : FindAllReviewImageResponse
@@ -21,18 +21,18 @@ import lombok.Data;
 @Data
 @Builder
 public class FindAllReviewByPerfumeId {
-  private String season;
+    private String season;
 
-  @Enumerated(EnumType.STRING)
-  private Preference preference;
+    @Enumerated(EnumType.STRING)
+    private Preference preference;
 
-  @Enumerated(EnumType.STRING)
-  private Longevity longevity;
+    @Enumerated(EnumType.STRING)
+    private Longevity longevity;
 
-  @Enumerated(EnumType.STRING)
-  private Sillage sillage;
+    @Enumerated(EnumType.STRING)
+    private Sillage sillage;
 
-  private String nickname;
-  private String imgUrl;
+    private String nickname;
+    private String imgUrl;
 
 }

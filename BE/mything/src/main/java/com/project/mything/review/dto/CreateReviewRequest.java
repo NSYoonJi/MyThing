@@ -4,7 +4,6 @@ import com.project.mything.review.entity.Longevity;
 import com.project.mything.review.entity.Preference;
 import com.project.mything.review.entity.Sillage;
 import lombok.Data;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 

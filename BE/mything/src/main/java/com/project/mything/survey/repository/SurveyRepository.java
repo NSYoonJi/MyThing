@@ -7,11 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
-import java.util.Optional;
 
 // 여기는 설문조사 이미지가 있는 repository
 public interface SurveyRepository extends JpaRepository<Survey, Long> {
-
 
 
     // 이름이 pNum-% 인 survey 모두 찾기
