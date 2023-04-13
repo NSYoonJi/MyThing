@@ -1,7 +1,7 @@
 <center><h1>취:향 </h1></center>
 
 <center><strong>"당신의 취향을 찾아드립니다"<strong></center> <br />
-<a href ="https://makeyourpreference.com/" target="_blank"> -- 취향 홈페이지 바로가기 -- </a>
+[-- 취향 홈페이지 바로가기 --](https://makeyourpreference.com/){:target="_blank"}
 
 <br>
 
