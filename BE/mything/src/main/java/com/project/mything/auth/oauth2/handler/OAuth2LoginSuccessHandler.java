@@ -40,8 +40,7 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
                 String accessToken = jwtService.createAccessToken(oAuth2User.getTestId());
                 response.addHeader(jwtService.getAccessHeader(), "Bearer " + accessToken);
 
-                String redirectUrl = "http://j8b207.p.ssafy.io/preference?code=" + accessToken;
-//                String redirectUrl = "http://localhost:3000/preference?code=" + accessToken;
+                String redirectUrl = "http://makeyourpreference.com/preference?code=" + accessToken;
                 response.sendRedirect(redirectUrl);
             } else {
                 loginSuccess(response, oAuth2User); // 로그인에 성공한 경우 access, refresh 토큰 생성
@@ -66,8 +65,7 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
 
         jwtService.sendAccessToken(response, accessToken);
         jwtService.updateRefreshToken(oAuth2User.getTestId(), refreshToken);
-        String redirectUrl = "http://j8b207.p.ssafy.io/mainpage?code=" + accessToken;
-//        String redirectUrl = "http://localhost:3000/mainpage?code=" + accessToken;
+        String redirectUrl = "http://makeyourpreference.com/mainpage?code=" + accessToken;
         response.sendRedirect(redirectUrl);
     }
 }
